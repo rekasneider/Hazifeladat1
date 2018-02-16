@@ -64,6 +64,5 @@ def fel7(lista, betu):
 
 
 def main():
-    fel7('alma, ananász, narancs', 'a')
 if __name__=="__main__":
     main()
