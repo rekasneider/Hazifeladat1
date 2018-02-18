@@ -15,6 +15,7 @@ def feladat3(x):
     else:
         print('A függvény nem definiált ebben a pontban')
 
+
 def feladat4(a,b,c):
     min=a
     max=a
