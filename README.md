@@ -1,2 +1,3 @@
 # Hazifeladat1
-gyakoroljunk sokat
+Sneider Réka
+NEPTUN kód: JG8EAL
