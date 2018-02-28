@@ -6,6 +6,36 @@ def feladat1(a,b):
     print(a,b)
 
 
+def feladat2hosszú(a,b,c):
+    if a<b and a<c:
+        print(a,end=' ')
+        if b<c:
+            print(b,c,end=' ')
+        else:
+            print(c,b)
+    elif b<a and b<c:
+        print(b,end=' ')
+        if a<c:
+            print(a,c,end=' ')
+        else:
+            print(c,a, end=' ')
+    else:
+        print(c, end=' ')
+        if a<b:
+            print(a,b,end=' ')
+        else:
+            print(b,a,end=' ')
+
+
+def feladat2(a,b,c):
+    lista=[a,b,c]
+    for i in range(len(lista) - 1):
+        for j in range(i + 1, len(lista)):
+            if lista[i] > lista[j]:
+                lista[i], lista[j] = lista[j], lista[i]
+    print(str(lista).strip('[]'))
+
+
 def feladat3(x):
     if -2<x and x<0:
         print(2*x)
@@ -69,6 +99,17 @@ def feladat8(x,a,b,c,d):
         E=4
     print(f,E)
 
+def feladat9(a,b,c):
+    d=b*b-4*a*c
+    if d>=0:
+        x1=(-b-mt.sqrt(d))/(2 * a)
+        x2=(-b+mt.sqrt(d))/(2 * a)
+        print('x1=', x1)
+        print('x2=', x2)
+    else:
+        print('Nincs megoldás.')
+
+
 
 def feladat12(elertpontszam, maxpontszam):
     szazalek=(elertpontszam/maxpontszam)*100
@@ -121,6 +162,15 @@ def feladat14(honapszam):
     else:
         print('hiba')
 
+
+def feladat15(a,b):
+    hányados=0
+    while a>=b:
+        hányados+=1
+        a=a-b
+    print(hányados)
+
+
 def feladat16(a,b):
     while True:
         r=a%b
@@ -139,6 +189,21 @@ def feladat17(n):
         uj=uj*10+szj
         n=n//10
     print(uj==masolat)
+
+
+def feladat18(a,b):
+    x=a
+    y=b
+    p=0
+    while x>0:
+        if not x%2==0:
+            p=p+y
+            x-=1
+        else:
+            x=x/2
+            y=y+y
+    print(p)
+
 
 def feladat19(n):
     prim=True
@@ -184,7 +249,24 @@ def feladat21(n):
         print(ujszam)
 
 
-def feladat25(fo, km):
+def feladat24():
+    a=0
+    b=0
+    while True:
+        n=int(input('n='))
+        if n%7==5:
+            a+=1
+        elif n%13==7:
+            b+=1
+        else:
+            if n==0:
+                break
+    print('7-tel való osztási maradéka 5:',a, '13-mal való osztási maradéka 7:',b)
+
+
+def feladat25():
+    fo=float(input('fő:'))
+    km=float(input('km:'))
     if fo/km<50:
         print('Ritkán lakott')
     elif fo/km>=50 and fo/km<300:
@@ -240,7 +322,67 @@ def feladat29(n):
         print(f)
 
 
-def main():
+def feladat31(n):
+    for i in range(1,(n//2)+1):
+        if n%i==0:
+            print(i, end=' ')
 
+
+def feladat32(k, n, m):
+
+    while n<=m:
+        if n%k==0:
+            print(n)
+        n+=1
+
+
+def feladat36(n):
+    a=0
+    b=1
+    c=a+b
+    li=[]
+    if c<n and b<n and a<n:
+        li.append(a)
+        li.append(b)
+        li.append(c)
+    k = 3
+    while k<n:
+        a=b
+        b=c
+        c=a+b
+        if c<(n):
+            li.append(c)
+        k+=1
+    print(len(li))
+
+def feladat37(n):
+    a=0
+    b=1
+    c=a+b
+    k=3
+    while True:
+        a=b
+        b=c
+        c=a+b
+        if n==a:
+            print(b)
+            break
+
+
+def feladat38(n, szamjegy):
+    a=0
+    i=1
+    n=str(n)
+    if len(n)<=9:
+        while i<len(n):
+            if n[i]==str(szamjegy):
+                a+=1
+            i+=1
+        print(a)
+
+
+
+
+def main():
 if __name__=="__main__":
     main()
