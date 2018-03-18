@@ -135,6 +135,24 @@ def feladat_17():
         fajl1.close()
 
 
+def feladat_19():
+    try:
+        fajl=open('be.txt',encoding='utf-8', mode='r')
+        latogatok=0
+        leglatogatottabb=''
+        for sor in fajl:
+            sor=sor.strip()
+            li=sor.split(' ')
+            if int(li[1])>latogatok:
+                latogatok=int(li[1])
+                leglatogatottabb=li[0]
+        print(leglatogatottabb)
+    except Exception as e:
+        print(e)
+    finally:
+        fajl.close()
+
+
 def feladat_20():
     try:
         fajl=open('be.txt',encoding='utf-8', mode='r')
@@ -154,7 +172,70 @@ def feladat_20():
         fajl.close()
 
 
-def main():
+def feladat_21():
+    try:
+        fajl1=open('be.txt', encoding='utf-8', mode='r')
+        fajl2=open('ki.txt', encoding='utf-8', mode='w')
+        pontszam=0
+        for sor in fajl1:
+            sor=sor.strip()
+            li=sor.split(';')
+            for i in range(1, len(li)-1):
+                pontszam+=int(li[i])
+            fajl2.write(li[0])
+            fajl2.write(str(pontszam))
+    except Exception as e:
+        print(e)
+    finally:
+        fajl1.close()
+        fajl2.close()
 
+
+def feladat_22():
+    try:
+        fajl1=open('be.txt',encoding='utf-8', mode='r')
+        fajl2=open('ki.txt', encoding='utf-8', mode='w')
+        pont=1000
+        nev=''
+        for sor in fajl1:
+            sor=sor.strip()
+            li=sor.split(';')
+            for i in li:
+                if float(li[2])<pont:
+                    pont=float(li[2])
+                    nev=li[0]
+        fajl2.write(nev)
+    except Exception as e:
+        print(e)
+    finally:
+        fajl1.close()
+        fajl2.close()
+
+
+def feladat_23():
+    try:
+        fajl=open('be.txt', mode='r')
+        tav=0
+        a=True
+        for sor in fajl:
+            sor=sor.strip()
+            if tav>(int(sor)):
+                a=False
+            tav=int(sor)
+        if a:
+            print('yes')
+        else:
+            print('no')
+    except Exception as e:
+        print(e)
+    finally:
+        fajl.close()
+
+
+
+
+
+def main():
+    
 if __name__=="__main__":
     main()
